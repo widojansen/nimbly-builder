@@ -14,7 +14,7 @@
 	import { validate_symbol } from '$lib/converter'
 	import { dndzone } from 'svelte-dnd-action'
 	import { flip } from 'svelte/animate'
-	import { GITHUB_USER } from '$env/static/public'
+	import { PUBLIC_GITHUB_USER } from '$env/static/public'
 
 	let active_tab = 'site'
 
@@ -80,7 +80,7 @@
 
 	async function get_primo_blocks() {
 		const { data } = await axios.get(
-			`https://raw.githubusercontent.com/${GITHUB_USER}/primo-library/main/primo.json`
+			`https://raw.githubusercontent.com/${PUBLIC_GITHUB_USER}/primo-library/main/primo.json`
 		)
 		return data.symbols.map((s) => ({ ...s, _drag_id: uuidv4() }))
 	}

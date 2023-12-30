@@ -1,11 +1,11 @@
 import axios from 'axios'
-import { GITHUB_USER } from '$env/static/public'
+import { PUBLIC_GITHUB_USER } from '$env/static/public'
 
 /** @type {import('@sveltejs/kit').Load} */
 export async function load(event) {
   const [ parent_url = 'index', child_url ] = event.params['page']?.split('/') ?? []
   const page_url = child_url ?? parent_url
-  const {data} = await axios.get(`https://raw.githubusercontent.com/${GITHUB_USER}/${event.params.site}/main/primo.json`)
+  const {data} = await axios.get(`https://raw.githubusercontent.com/${PUBLIC_GITHUB_USER}/${event.params.site}/main/primo.json`)
   const {site, pages, sections, symbols} = data
   const page = pages.find(page => page.url === (page_url ?? 'index'))
 
