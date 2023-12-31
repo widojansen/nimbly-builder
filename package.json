@@ -1,5 +1,5 @@
 {
-	"name": "builder",
+	"name": "builderwj",
 	"version": "0.1.56",
 	"scripts": {
 		"dev": "vite dev",
