@@ -1,5 +1,5 @@
 {
-	"name": "primo-builder",
+	"name": "nimbly-builder",
 	"version": "0.1.56",
 	"scripts": {
 		"dev": "vite dev",
